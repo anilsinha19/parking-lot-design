@@ -1,4 +1,4 @@
-package om.gojek.sample.parking.vehicle;
+package com.gojek.sample.parking.vehicle;
 
 import static org.junit.Assert.assertTrue;
 

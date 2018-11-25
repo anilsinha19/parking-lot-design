@@ -1,4 +1,4 @@
-package om.gojek.sample.parking.ui;
+package com.gojek.sample.parking.ui;
 
 import org.junit.Test;
 

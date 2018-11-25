@@ -12,38 +12,35 @@ public class ParkingSlot implements Slot {
 		this.slotNumber = slotNumber;
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.gojek.sample.parking.parkingmgr.slot.Slot#getSlotNumber()
-	 */
+	@Override
 	public int getSlotNumber() {
 		return slotNumber;
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.gojek.sample.parking.parkingmgr.slot.Slot#getVehicle()
-	 */
+	@Override
 	public Vehicle getVehicle() {
 		return vehicle;
 	}
-	/* (non-Javadoc)
-	 * @see com.gojek.sample.parking.parkingmgr.slot.Slot#setVehicle(com.gojek.sample.parking.vehicles.Vehicle)
-	 */
+	
+	@Override
 	public void setVehicle(Vehicle vehicle) {
 		this.vehicle = vehicle;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.gojek.sample.parking.parkingmgr.slot.Slot#isAvailable()
-	 */
+	@Override
 	public boolean isAvailable() {
 		return isAvailable;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.gojek.sample.parking.parkingmgr.slot.Slot#setAvailable(boolean)
-	 */
+	@Override
 	public void setAvailable(boolean isAvailable) {
 		this.isAvailable = isAvailable;
 	}
 	
+	public Slot copy() {
+		ParkingSlot ps = new ParkingSlot(slotNumber);
+		ps.setAvailable(isAvailable);
+		ps.setVehicle(vehicle);
+		return ps;
+	}
 }

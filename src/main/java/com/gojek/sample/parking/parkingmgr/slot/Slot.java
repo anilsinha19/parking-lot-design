@@ -13,5 +13,7 @@ public interface Slot {
 	boolean isAvailable();
 
 	void setAvailable(boolean isAvailable);
+	
+	Slot copy();
 
 }
