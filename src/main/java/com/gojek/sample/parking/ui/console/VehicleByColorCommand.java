@@ -37,6 +37,6 @@ public class VehicleByColorCommand implements Command{
 		if(sb.lastIndexOf(",") != -1) {
 			 result = sb.deleteCharAt(sb.lastIndexOf(",")).toString();	
 		}
-		System.out.println(result + "\n");
+		System.out.println(result.trim());
 	}
 }

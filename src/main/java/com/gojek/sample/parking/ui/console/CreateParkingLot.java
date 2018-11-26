@@ -8,7 +8,7 @@ public class CreateParkingLot  implements Command{
 	@Override
 	public void execute(ParkingEngine parkingEngine, String[] inputCmd) {
 		parkingEngine = BaseEngine.init(Integer.valueOf(inputCmd[1]));
-		System.out.println("Created a parking lot with "+parkingEngine.getTotalNumberOfSlots()+" slots\n");
+		System.out.println("Created a parking lot with "+parkingEngine.getTotalNumberOfSlots()+" slots");
 	}
 
 }

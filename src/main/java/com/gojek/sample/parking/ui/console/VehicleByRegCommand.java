@@ -11,7 +11,7 @@ public class VehicleByRegCommand implements Command {
 
 		 Slot slot = parkingEngine.getParkedVehiclesByRegNumber(inputCmd[1]);
 		 if(slot != null) {
-			 System.out.println(slot.getSlotNumber() +"\n");
+			 System.out.println(slot.getSlotNumber());
 		 }else {
 			 System.out.println("Not found");
 		 }

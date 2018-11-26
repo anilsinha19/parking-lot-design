@@ -9,7 +9,7 @@ public class LeaveCommand implements Command {
 	@Override
 	public void execute(ParkingEngine parkingEngines, String[] inputCmd) throws ParkingException {
 		Slot slot = parkingEngines.removeVechicle(Integer.valueOf(inputCmd[1]));
-		System.out.println("Slot number "+slot.getSlotNumber()+" is free\n");
+		System.out.println("Slot number "+slot.getSlotNumber()+" is free");
 	}
 
 }
