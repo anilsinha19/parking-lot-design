@@ -4,5 +4,6 @@
 # it.
 #!/bin/bash
 #echo $PWD
-java -jar target/parking-lot.jar "$1"
+#java -jar ../../../target/parking-lot.jar "$1"
+ java -jar target/parking-lot.jar "$1"
 

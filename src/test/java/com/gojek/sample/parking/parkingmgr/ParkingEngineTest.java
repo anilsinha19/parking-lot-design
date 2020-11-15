@@ -18,7 +18,7 @@ public class ParkingEngineTest extends TestCase{
 
 	@Before
     public void setUp() {
-		 parkingEngine = BaseEngine.init(5);
+		 parkingEngine = new CarParkingEngine(5);
     }
 	
 	@After
@@ -86,7 +86,7 @@ public class ParkingEngineTest extends TestCase{
 	
 	@Test
 	public void testParkingLimit() {
-		parkingEngine = BaseEngine.init(3);
+		parkingEngine = new CarParkingEngine(3);
 		Slot s1 = parkingEngine.parkVechicle(new Car("Reg 1", "White"));
 		assertNotNull(s1);
 		Slot s2 = parkingEngine.parkVechicle(new Car("Reg 2", "White"));

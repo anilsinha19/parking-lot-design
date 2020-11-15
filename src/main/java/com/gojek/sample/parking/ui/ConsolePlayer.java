@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import com.gojek.sample.parking.error.ParkingException;
 import com.gojek.sample.parking.parkingmgr.BaseEngine;
+import com.gojek.sample.parking.parkingmgr.CarParkingEngine;
 import com.gojek.sample.parking.parkingmgr.ParkingEngine;
 import com.gojek.sample.parking.ui.console.CommandHandler;
 import com.gojek.sample.parking.ui.console.ConsoleCommandHandler;
@@ -43,7 +44,8 @@ public class ConsolePlayer {
 		CommandHandler handler = new ConsoleCommandHandler();
 		
 		if("create_parking_lot".equals(command)) {
-			parkingEngine = BaseEngine.init(Integer.valueOf(inputCmd[1]));
+			//parkingEngine = BaseEngine.init(Integer.valueOf(inputCmd[1]));
+			parkingEngine = new CarParkingEngine((Integer.valueOf(inputCmd[1])));
 			System.out.println("Created a parking lot with "+parkingEngine.getTotalNumberOfSlots()+" slots");
 		}else {
 			handler.invoke(command).execute(parkingEngine, inputCmd);	

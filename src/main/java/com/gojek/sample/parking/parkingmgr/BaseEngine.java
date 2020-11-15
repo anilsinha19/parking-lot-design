@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-import com.gojek.sample.parking.error.ParkingException;
 import com.gojek.sample.parking.parkingmgr.slot.ParkingSlot;
 import com.gojek.sample.parking.parkingmgr.slot.Slot;
 import com.gojek.sample.parking.vehicles.Vehicle;
@@ -19,27 +18,26 @@ public class BaseEngine implements ParkingEngine {
 	
 	private static BaseEngine baseEngine = null;
 	
-	private BaseEngine() {
+	public BaseEngine() {
 		
 	}
 	
-	public static synchronized ParkingEngine init(Integer totalNosOfSlots) {
-	  baseEngine = new BaseEngine();	
-	  baseEngine.totalNosOfSlots = totalNosOfSlots;
-	  baseEngine.slotList = new ArrayList<Slot>(totalNosOfSlots);
-	  baseEngine.freeSlotMap = new TreeMap<Integer, Slot>();
+	protected  synchronized ParkingEngine init(Integer totalNosOfSlots) {	
+	  this.totalNosOfSlots = totalNosOfSlots;
+	  this.slotList = new ArrayList<Slot>(totalNosOfSlots);
+	  this.freeSlotMap = new TreeMap<Integer, Slot>();
 	  for (int i = 1; i <= totalNosOfSlots; i++) {
 		  Slot slot = new ParkingSlot(i);
-		  baseEngine.freeSlotMap.put(slot.getSlotNumber(), slot);
-		  baseEngine.slotList.add(slot);
+		  this.freeSlotMap.put(slot.getSlotNumber(), slot);
+		  this.slotList.add(slot);
 	  }
 	  return baseEngine;
 	} 
 	
-	public static ParkingEngine getInstance() throws ParkingException{
+	/*public static ParkingEngine getInstance() throws ParkingException{
 		if(baseEngine == null) throw new ParkingException("Paking Engine is not initilized , please cal init first");
 		return baseEngine;
-	}
+	}*/
 	
 	@Override
 	public int getTotalNumberOfSlots() {
